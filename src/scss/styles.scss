@@ -231,7 +231,7 @@ $max_width: 1024px;
   display: flex;
   justify-content: space-between;
   color: white;
-  margin: 80px auto;
+  margin: 0 auto;
   max-width: $max_width;
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -240,7 +240,7 @@ $max_width: 1024px;
   }
 
   &_content {
-    margin: 50px 0;
+    margin: 20px 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -363,7 +363,8 @@ $max_width: 1024px;
       font-size: 18px;
       cursor: pointer;
       &:hover {
-        opacity: 80%;
+        background: white;
+        color: $black;
         transition: 0.1s ease-in-out;
       }
     }
@@ -374,6 +375,7 @@ $max_width: 1024px;
 .footer {
   background: $black;
 }
+
 .footer_wrapper {
   color: white;
   max-width: $max_width;
@@ -433,6 +435,66 @@ $max_width: 1024px;
   text-align: center;
   color: white;
   padding: 10px 10px;
+}
+.footer_upper_bg {
+  background-image: url("https://i.ibb.co/F52bLSP/footerbg.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer_upper {
+  padding: 66px 30px;
+  color: white;
+  display: flex;
+  max-width: $max_width;
+  margin: 0 auto;
+  gap: 50px;
+  align-items: center;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 53px 20px;
+  }
+  button {
+    height: 50px;
+    background: $main_color;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 0 10px;
+    width: 180px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    &:hover {
+      background: $black;
+      cursor: pointer;
+      transition: 0.1s ease-in-out;
+    }
+  }
+  div {
+    background-color: rgba(0, 0, 0, 0.7); /* 50% transparency */
+    padding: 30px;
+    border-radius: 10px;
+    h2 {
+      margin: 0 0 20px 0;
+      padding: 0 0 20px 0;
+      position: relative;
+      font-size: 28px;
+      &::after {
+        content: "";
+        width: 200px;
+        height: 2px;
+        background: $main_color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
 }
 // form
 .form_wrapper {
@@ -529,4 +591,111 @@ form button {
 
 form button:hover {
   background-color: $black;
+}
+.footer_poruku {
+  p {
+    background: $main_color;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    max-width: 150px;
+  }
+}
+//cards
+.cards_bg {
+  background-color: rgba(0, 0, 0, 0.05); /* 50% transparency */
+}
+.cards-section {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: $dark_color; // Dark color for the text
+  max-width: $max_width;
+  margin: 50px auto;
+  h2 {
+    font-size: 30px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: $black; // Main color for headings
+  }
+
+  .cards-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    @media (max-width: 1024px) {
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  .card {
+    background: $main_color;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; // Default card size
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+        color: white; // Main color for titles
+      }
+
+      p {
+        font-size: 1rem;
+        color: white; // Dark text color for description
+        margin-bottom: 1.2rem;
+      }
+
+      button {
+        background-color: $black; // Main color for the button
+        color: #fff;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: white;
+          color: $black;
+          // Secondary color for hover
+        }
+      }
+    }
+  }
+
+  .card-large {
+    width: 350px; // Larger card size for the middle one
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); // Extra emphasis
+    transform: scale(1.05); // Slightly enlarged by default
+
+    &:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+  }
 }

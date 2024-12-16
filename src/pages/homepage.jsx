@@ -4,7 +4,8 @@ import Hero from "../components/hero";
 import Iskustvo from "../components/iskustvo";
 import Onama from "../components/onama";
 import Footer from "../components/footer";
-import Form from "../components/form";
+import Cards from "../components/cards";
+
 const homepage = () => {
   return (
     <div>
@@ -12,7 +13,7 @@ const homepage = () => {
       <Hero />
       <Iskustvo />
       <Onama />
-      <Form />
+      <Cards />
       <Footer />
     </div>
   );
