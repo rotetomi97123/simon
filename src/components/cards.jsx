@@ -1,6 +1,7 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const cards = () => {
+const cards = forwardRef((props, ref) => {
+  const { scrollToForm } = props;
   const cards = [
     {
       title: "Iznajmljivanje mobilnih toaleta",
@@ -23,7 +24,7 @@ const cards = () => {
   ];
 
   return (
-    <div className="cards_bg">
+    <div className="cards_bg" ref={ref}>
       {" "}
       <div className="cards-section">
         <h2>Naše usluge</h2>
@@ -37,7 +38,7 @@ const cards = () => {
               <div className="card-content">
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
-                <button>Saznajte više</button>
+                <button onClick={scrollToForm}>Saznajte više</button>
               </div>
             </div>
           ))}
@@ -45,6 +46,6 @@ const cards = () => {
       </div>
     </div>
   );
-};
+});
 
 export default cards;

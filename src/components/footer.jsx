@@ -5,7 +5,7 @@ import insta from "../assets/insta_white.svg";
 import email from "../assets/email_white2.svg";
 import { Link } from "react-router-dom";
 
-const footer = () => {
+const footer = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
   return (
     <>
       <div className="footer_upper_bg">
@@ -18,7 +18,7 @@ const footer = () => {
             </p>
           </div>
           <button>
-            <Link to="/kontakt">Kontaktirajte naš</Link>
+            <Link onClick={scrollToForm}>Kontaktirajte naš</Link>
           </button>
         </div>
       </div>
@@ -45,13 +45,13 @@ const footer = () => {
           <div className="footer_links">
             <h2>Linkovi</h2>
             <ul>
-              <li>
+              <li onClick={scrollToSection2}>
                 <Link>Usluge</Link>
               </li>
-              <li>
+              <li onClick={scrollToSection1}>
                 <Link>O nama</Link>
               </li>
-              <li>
+              <li onClick={scrollToForm}>
                 <Link>Kontakt</Link>
               </li>
             </ul>
@@ -64,7 +64,7 @@ const footer = () => {
             <a href="mailto:simons@gmail.com">
               <p>simons@gmail.com</p>
             </a>
-            <Link to="/kontakt" className="footer_poruku">
+            <Link className="footer_poruku" onClick={scrollToForm}>
               <p>Pošalji poruku</p>
             </Link>
           </div>

@@ -8,7 +8,7 @@ import hamburger from "../assets/hamburger_white.svg";
 import close from "../assets/close.svg";
 import { Link } from "react-router-dom";
 
-const navbar = () => {
+const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +32,17 @@ const navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <div className="nav_wrapper">
@@ -83,26 +94,26 @@ const navbar = () => {
                   {isActive == "first" ? <div /> : ""}
                 </li>
                 <li>
-                  <Link to="/usluge" className="hover-text">
+                  <p className="hover-text" onClick={scrollToSection2}>
                     Usluge
-                  </Link>
+                  </p>
                   {isActive == "second" ? <div /> : ""}
                 </li>
                 <li>
-                  <Link to="/onama" className="hover-text">
+                  <p className="hover-text" onClick={scrollToSection1}>
                     O nama
-                  </Link>
+                  </p>
                   {isActive == "third" ? <div /> : ""}
                 </li>
                 <li>
-                  <Link to="/kontakt" className="hover-text">
+                  <p className="hover-text" onClick={scrollToForm}>
                     Kontakt
-                  </Link>
+                  </p>
                   {isActive == "fourth" ? <div /> : ""}
                 </li>
               </ul>
               <a href="tel:+063999999">
-                <p className="nav_lower_call">(+381) 63 999 999</p>
+                <p className="nav_lower_call">063 999 999</p>
               </a>
             </div>
             <img
@@ -121,7 +132,7 @@ const navbar = () => {
               <li style={{ color: "white" }}>O nama</li>
               <li style={{ color: "white" }}>Kontakt</li>
               <a href="tel:+063999999">
-                <p className="nav_lower_call">(+381) 63 999 999</p>
+                <p className="nav_lower_call">063 999 999</p>
               </a>
             </ul>
           </div>

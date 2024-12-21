@@ -2,19 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const hero = () => {
-  const params = {
-    slidesPerView: 1,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    loop: true, // Disable looping
-  };
+const hero = ({ scrollToSection2 }) => {
   return (
     <div className="hero_bg">
       <div className="hero">
@@ -23,7 +11,7 @@ const hero = () => {
         </h1>
 
         <p>Zakažite mobilnih toaleta već danas</p>
-        <button>Naše usloge</button>
+        <button onClick={scrollToSection2}>Naše usloge</button>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const onama = () => {
+const onama = forwardRef((props, ref) => {
+  const { scrollToSection2 } = props;
+
   return (
-    <div className="onama_wrapper_bg">
+    <div className="onama_wrapper_bg" ref={ref}>
       <div className="onama_wrapper">
         <div className="onama_wrapper_content">
           <h1>Simons Mobilni toaleti - iznajmljivanje i održavanje</h1>
@@ -10,7 +12,7 @@ const onama = () => {
             Dobrodošli na Simons Mobilni Toaleti - lidera u iznajmljivanju i
             održavanju mobilnih toaleta!
           </p>
-          <button>Više o nama</button>
+          <button onClick={scrollToSection2}>Više o nama</button>
         </div>
         <div className="gallery">
           <div className="gallery-item">
@@ -35,6 +37,6 @@ const onama = () => {
       </div>
     </div>
   );
-};
+});
 
 export default onama;
