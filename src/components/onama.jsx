@@ -12,7 +12,7 @@ const onama = forwardRef((props, ref) => {
             Dobrodošli na Simons Mobilni Toaleti - lidera u iznajmljivanju i
             održavanju mobilnih toaleta!
           </p>
-          <button onClick={scrollToSection2}>Više o nama</button>
+          <button onClick={scrollToSection2}>Naše usluge</button>
         </div>
         <div className="gallery">
           <div className="gallery-item">

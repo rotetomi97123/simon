@@ -164,6 +164,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 1024px) {
+  .hero_bg {
+    background-position: top;
+  }
+}
 
 .hero {
   color: white;
@@ -541,7 +546,7 @@
   padding: 40px;
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: #ff6f00;
   z-index: 0;
 }
 @media (max-width: 1024px) {
@@ -551,12 +556,16 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 15px;
+    padding: 20px;
   }
+}
+.form_wrapper h2 {
+  color: white;
 }
 .form_wrapper p {
   margin: 0 0 20px 0;
   font-size: 14px;
+  color: white;
 }
 .form_wrapper .map {
   width: 60%;
@@ -578,7 +587,7 @@
   content: "";
   width: 33%;
   height: 100%;
-  background: #ff6f00;
+  background: white;
   position: absolute;
   right: 0;
   top: 0;
@@ -595,6 +604,11 @@
   display: flex;
   flex-direction: column;
   max-width: 300px;
+}
+@media (max-width: 1024px) {
+  .form_wrapper form {
+    max-width: unset;
+  }
 }
 .form_wrapper form input,
 .form_wrapper form textarea {
@@ -639,12 +653,17 @@ textarea {
   max-width: 300px;
   max-height: 300px;
 }
+@media (max-width: 1024px) {
+  textarea {
+    max-width: unset;
+  }
+}
 
 form input:focus,
 form textarea:focus {
   border-color: black;
   outline: none;
-  box-shadow: 0 0 5px #ff6f00;
+  box-shadow: 0 0 5px #3e2723;
 }
 
 /* Button Styling */
@@ -760,11 +779,17 @@ form button:hover {
 .form_wrapper textarea {
   border: 1px solid #ff6f00 !important;
 }
+@media (max-width: 1024px) {
+  .form_wrapper input,
+  .form_wrapper textarea {
+    width: 100%;
+  }
+}
 .form_wrapper textarea {
   height: 100px;
 }
 .form_wrapper button {
-  background: #ff6f00;
+  background: black;
   margin: 10px 0 0 0;
   border-radius: 32px;
 }
