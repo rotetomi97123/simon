@@ -6,8 +6,7 @@ import email from "../assets/email.svg";
 import phone from "../assets/phone2.svg";
 import hamburger from "../assets/hamburger_white.svg";
 import close from "../assets/close.svg";
-import { Link } from "react-router-dom";
-
+import phone_white from "../assets/phone_white.svg";
 const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
@@ -78,7 +77,7 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
       <div
         className="nav_lower_position"
         style={{
-          top: isMobile ? "227px" : "88px",
+          top: isMobile ? "209px" : "88px",
           marginTop: isSmall ? "50px" : "0",
         }}
       >
@@ -87,12 +86,6 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
             <img src={Logo} alt="logo" />
             <div className="nav_lower_flex2">
               <ul>
-                <li>
-                  <Link to="/" className="hover-text">
-                    Početna
-                  </Link>
-                  {isActive == "first" ? <div /> : ""}
-                </li>
                 <li>
                   <p className="hover-text" onClick={scrollToSection2}>
                     Usluge
@@ -112,8 +105,9 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
                   {isActive == "fourth" ? <div /> : ""}
                 </li>
               </ul>
-              <a href="tel:+063999999">
-                <p className="nav_lower_call">063 999 999</p>
+              <a href="tel:+063999999" className="nav_lower_call">
+                <img src={phone_white} alt="phone" />
+                <p>Pozovite naš</p>
               </a>
             </div>
             <img
@@ -127,9 +121,6 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
         {isMobile ? (
           <div className="mobile_nav">
             <ul>
-              <li style={{ color: "white" }} onClick={scrollToSection2}>
-                Pocetna
-              </li>
               <li
                 style={{ color: "white" }}
                 onClick={() => {
@@ -160,8 +151,9 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
               >
                 Kontakt
               </li>
-              <a href="tel:+381 63999999">
-                <p className="nav_lower_call">063 999 999</p>
+              <a href="tel:+063999999" className="nav_lower_call">
+                <img src={phone_white} alt="phone" />
+                <p>Pozovite naš</p>
               </a>
             </ul>
           </div>

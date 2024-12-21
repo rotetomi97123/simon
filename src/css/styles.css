@@ -132,6 +132,18 @@
   color: white;
   font-size: 18px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .nav_lower_call {
+    margin: 20px 0 0 0;
+  }
+}
+.nav_lower_call img {
+  width: 25px;
 }
 .nav_lower_call:hover {
   background: #ff9800;
@@ -214,7 +226,7 @@
 .mobile_nav a {
   text-decoration: none;
 }
-.mobile_nav p {
+.mobile_nav p:not(:last-child) {
   margin: 20px 0 0 0;
 }
 
