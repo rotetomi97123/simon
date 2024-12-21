@@ -127,11 +127,40 @@ const navbar = ({ scrollToForm, scrollToSection1, scrollToSection2 }) => {
         {isMobile ? (
           <div className="mobile_nav">
             <ul>
-              <li style={{ color: "white" }}>Početna</li>
-              <li style={{ color: "white" }}>Usluge</li>
-              <li style={{ color: "white" }}>O nama</li>
-              <li style={{ color: "white" }}>Kontakt</li>
-              <a href="tel:+063999999">
+              <li style={{ color: "white" }} onClick={scrollToSection2}>
+                Pocetna
+              </li>
+              <li
+                style={{ color: "white" }}
+                onClick={() => {
+                  scrollToSection2(); // Scroll down to section
+                  setIsMobile(!isMobile); // Toggle mobile state
+                  setIsOpen(!isOpen); // Toggle menu state
+                }}
+              >
+                Usluge
+              </li>
+              <li
+                style={{ color: "white" }}
+                onClick={() => {
+                  scrollToSection1(); // Scroll down to section
+                  setIsMobile(!isMobile); // Toggle mobile state
+                  setIsOpen(!isOpen); // Toggle menu state
+                }}
+              >
+                O nama
+              </li>
+              <li
+                style={{ color: "white" }}
+                onClick={() => {
+                  scrollToForm(); // Scroll down to section
+                  setIsMobile(!isMobile); // Toggle mobile state
+                  setIsOpen(!isOpen); // Toggle menu state
+                }}
+              >
+                Kontakt
+              </li>
+              <a href="tel:+381 63999999">
                 <p className="nav_lower_call">063 999 999</p>
               </a>
             </ul>
